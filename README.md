@@ -96,8 +96,6 @@ Appium dibangun di atas Node.js.
 brew install node
 ```
 
-````
-
 Verifikasi: `node -v` dan `npm -v`.
 
 ### c. Instalasi Java Development Kit (JDK)
@@ -239,4 +237,3 @@ Selama pengembangan skrip otomatisasi ini, beberapa tantangan dihadapi, antara l
 - **Interaksi dengan `DatePicker` dan `TimePicker` Material Design:** ID tombol "OK" pada dialog Material Design bisa berbeda dari ID standar Android. Perlu inspeksi manual dengan Appium Inspector saat dialog aktif untuk menemukan ID yang benar (seringkali `com.google.android.material:id/confirm_button` atau `android:id/button1` untuk versi standar).
 - **Timing dan Sinkronisasi:** Penggunaan `WebDriverWait` dengan `ExpectedConditions` yang tepat sangat krusial untuk menunggu elemen muncul dan siap diinteraksikan, terutama setelah navigasi halaman atau saat elemen dimuat secara dinamis. `Thread.sleep()` dihindari sebisa mungkin dan hanya digunakan untuk jeda singkat saat debugging atau saat menunggu pembaruan UI yang sulit ditunggu secara eksplisit.
 - **Konfigurasi Environment Appium:** Memastikan semua dependensi (Node, JDK, Android SDK, Appium Server, driver) terinstal dan variabel lingkungan (JAVA_HOME, ANDROID_HOME) terkonfigurasi dengan benar di macOS memerlukan perhatian detail. `appium-doctor` sangat membantu dalam diagnosis.
-````
