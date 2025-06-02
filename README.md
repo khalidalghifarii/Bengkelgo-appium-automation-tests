@@ -1,4 +1,3 @@
-````markdown
 # Proyek Ujian Akhir Semester (UAS) - Kualitas Perangkat Lunak
 
 ## Automasi Tes Aplikasi Mobile BengkelGo Menggunakan Appium dan Java
@@ -96,6 +95,7 @@ Appium dibangun di atas Node.js.
 ```bash
 brew install node
 ```
+
 ````
 
 Verifikasi: `node -v` dan `npm -v`.
@@ -192,8 +192,8 @@ Sebelum menjalankan skrip tes otomatis, pastikan lingkungan Anda memenuhi persya
 
 1.  **Clone Repositori Proyek Tes:**
     ```bash
-    git clone [URL_REPO_GITHUB_ANDA_UNTUK_PROYEK_TES_INI]
-    cd [NAMA_FOLDER_PROYEK_TES_ANDA]
+    git clone https://github.com/khalidalghifarii/Bengkelgo-appium-automation-tests.git
+    cd Bengkelgo-appium-automation-tests
     ```
 2.  **Pastikan File APK BengkelGo Ada:**
     - Letakkan file `app-debug.apk` BengkelGo di lokasi yang dapat diakses.
@@ -231,7 +231,7 @@ File `app-debug.apk` yang digunakan untuk pengujian ini dapat ditemukan di repos
 
 - `apk/app-debug.apk`
 
-## 10\. (Opsional) Tantangan yang Dihadapi dan Solusi
+## 10\. Tantangan yang Dihadapi dan Solusi
 
 Selama pengembangan skrip otomatisasi ini, beberapa tantangan dihadapi, antara lain:
 
@@ -239,18 +239,4 @@ Selama pengembangan skrip otomatisasi ini, beberapa tantangan dihadapi, antara l
 - **Interaksi dengan `DatePicker` dan `TimePicker` Material Design:** ID tombol "OK" pada dialog Material Design bisa berbeda dari ID standar Android. Perlu inspeksi manual dengan Appium Inspector saat dialog aktif untuk menemukan ID yang benar (seringkali `com.google.android.material:id/confirm_button` atau `android:id/button1` untuk versi standar).
 - **Timing dan Sinkronisasi:** Penggunaan `WebDriverWait` dengan `ExpectedConditions` yang tepat sangat krusial untuk menunggu elemen muncul dan siap diinteraksikan, terutama setelah navigasi halaman atau saat elemen dimuat secara dinamis. `Thread.sleep()` dihindari sebisa mungkin dan hanya digunakan untuk jeda singkat saat debugging atau saat menunggu pembaruan UI yang sulit ditunggu secara eksplisit.
 - **Konfigurasi Environment Appium:** Memastikan semua dependensi (Node, JDK, Android SDK, Appium Server, driver) terinstal dan variabel lingkungan (JAVA_HOME, ANDROID_HOME) terkonfigurasi dengan benar di macOS memerlukan perhatian detail. `appium-doctor` sangat membantu dalam diagnosis.
-
----
-
-```
-
-**Beberapa Hal yang Perlu Anda Sesuaikan dan Tambahkan:**
-
-* **URL Repositori GitHub Anda:** Ganti `[URL_REPO_GITHUB_ANDA_UNTUK_PROYEK_TES_INI]` dan `[NAMA_FOLDER_PROYEK_TES_ANDA]` dengan informasi yang benar setelah Anda membuat repositori dan mengunggah proyek.
-* **Path ke APK di Repositori:** Ganti `[PATH_KE_APK_ANDA_DI_REPO_GITHUB_INI]` dengan path aktual tempat Anda akan meletakkan file `app-debug.apk` di repositori GitHub proyek tes ini (misalnya, buat folder `apk/` di repo tes dan letakkan di sana).
-* **Path Absolut APK di Skrip Tes:** Ingatkan diri Anda (dan mungkin di README) bahwa pengguna lain yang menjalankan tes ini perlu mengubah path absolut ke `app-debug.apk` di dalam semua file `.java` (di metode `setUp()`). Cara yang lebih baik untuk proyek bersama adalah menggunakan path relatif atau properti sistem, tapi untuk UAS, path absolut yang didokumentasikan sudah cukup.
-* **Logo BengkelGo**: Saya menggunakan link ke logo dari repositori aplikasi BengkelGo Anda. Pastikan link tersebut valid atau unggah logo ke repositori tes Anda dan perbarui linknya.
-* **Kredensial Login**: Di bagian `performLogin()` dalam kode dan di README, selalu ingatkan untuk mengganti kredensial contoh dengan yang valid.
-
-Dengan `README.md` ini, proyek Anda akan terdokumentasi dengan baik. Selanjutnya adalah mengoptimalkan kode Java Anda dengan membuat kelas `BaseTest.java`. Apakah Anda siap untuk itu sekarang, atau ada hal lain yang ingin disesuaikan pada `README.md` ini?
-```
+````
